@@ -61,7 +61,7 @@
 	/*** 主選單 ***/
 	$menu = "";
 	// 先取主選單
-	$result = mysqli_query($link, "select * from menu where parent = 0");
+	$result = mysqli_query($link, "select * from menu where parent = 0 and display = 1");
 	while($row = mysqli_fetch_array($result))
 	{
 		$menu .= "<div class='mainmu' align='center'>
