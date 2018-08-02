@@ -49,10 +49,10 @@
 						?>
 						<ol start=<?=$ol?> class="ssaa" style="text-align:left;">
 						<?php
-							$result = mysqli_query($link, "select * from news");
+							$result = mysqli_query($link, "select * from news where display = 1 ");
 							$total = mysqli_num_rows($result);
 							
-							$result = mysqli_query($link, "select * from news order by id limit ".$start.", 5");
+							$result = mysqli_query($link, "select * from news where display = 1 order by id limit ".$start.", 5");
 							
 							$totalp = ceil($total/5);
 							while($row = mysqli_fetch_array($result))
