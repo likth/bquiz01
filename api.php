@@ -158,6 +158,11 @@
 	}
 	elseif($from == "news")
 	{
+		for($i = 0; $i < count($_POST["id"]); $i++)
+		{
+			mysqli_query($link, "update 1_news set text = '".$_POST["text"][$i]."' where id = '".$_POST["id"][$i]."'");
+		}
+		
 		$delete = $_POST["delete"];
 		foreach($delete as $del_id)
 		{
